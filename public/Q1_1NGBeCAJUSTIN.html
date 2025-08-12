@@ -1,3 +1,55 @@
-<script src = "script.js">
+<body>
+<form action="/action_page.php">
+    <label for="age">Your age:   </label>
+    <input type="text" id="age" name="age"><br>
+    <label for="maxAge">The age you want to live up to:     </label>
+    <input type="text" id="maxAge" name="maxAge"><br>
+    <label for="numPerDay">How many snacks you eat everyday: </label>
+    <input type="text" id="numPerDay" name="numPerDay"><br><br>
+    <input type="submit" value="Submit"><br><br>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+<script>
     
+let age = window.prompt("Enter your age:");
+let maxAge = window.prompt("Enter the age you want to live up to:");
+let numPerDay = window.prompt("Enter how many wafers you eat per day:");
+
+totalRequired = (numPerDay * 365) * (maxAge - age)
+
+
+if (confirm(`Are the values you inputted really true?:`)) {
+    document.write("You will need " + totalRequired + " wafers to last you until the ripe old age of " + maxAge)
+    alert(`You will need ${totalRequired} juicy chickenjoy to last you until the ripe old age of ${maxAge}`) }
+else {
+document.write("Run the code again:)")
+}
+
+
+
+
+
+
+
+
+
+
 </script>
+
+
+
+
+
+</body>>
+    
