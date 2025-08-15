@@ -1,17 +1,20 @@
 <body>
-    <label for="age">Your age:   </label>
-    <input type="text" id="age" name="age"><br>
-    <label for="maxAge">The age you want to live up to:     </label>
-    <input type="text" id="maxAge" name="maxAge"><br>
-    <label for="numPerDay">How many snacks you eat everyday: </label>
-    <input type="text" id="numPerDay" name="numPerDay"><br><br>
-    <input type="submit" value="Submit"><br><br>
+    <h1>Feed Albee His Snacks</h1> 
+    <label>
+        Your age:     <input id="age"> <br/>
+        The age you want to live up to <input id = "maxAge"> <br/>
+        How many snacks you eat everyday: <input id="numPerDay"> <br/>
+    </label>
+    
+    
+
+    <p id="result"> Result: </p>
+    <button onclick="getData()"> Accept Input</button>
+
+    </button>
 
 
 
-
-
-</form>
 
 
 
@@ -20,20 +23,27 @@
 
 
 <script>
-    
-let age = window.prompt("Enter your age:");
-let maxAge = window.prompt("Enter the age you want to live up to:");
-let numPerDay = window.prompt("Enter how many wafers you eat per day:");
+    function getData() {
+        let AGE = age.value;
+        let maxAGE = maxAge.value;
+        let perDay = numPerDay.value;
+        let sure = window.confirm("Are the values you inputted really true?")
 
-totalRequired = (numPerDay * 365) * (maxAge - age)
+        if (sure) {
+            let totalRequired = (Number(perDay) * 365) * (Number(maxAGE) - (AGE)) 
+            
+            result.innerHTML = "<b>Result: You will need " + totalRequired + " to last you until the ripe age of " + maxAGE + "</b>"; }
+        else {
+            window.alert("Please Run Again") }
+        }
 
 
-if (confirm(`Are the values you inputted really true?:`)) {
-    document.write("You will need " + totalRequired + " wafers to last you until the ripe old age of " + maxAge)
-    alert(`You will need ${totalRequired} juicy chickenjoy to last you until the ripe old age of ${maxAge}`) }
-else {
-document.write("Run the code again:)")
-}
+
+
+
+
+
+
 
 
 
